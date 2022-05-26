@@ -27,7 +27,8 @@ namespace EventHub
 
             for (int i = 1; i <= 5; i++)
             {
-                if (!eventBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes($"Event {i}"))))
+                var result = eventBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes($"Event {i}")));
+                if (!result)
                 {
                     throw new Exception($"Event {i} is too large for the batch and cannot be sent.");
                 }

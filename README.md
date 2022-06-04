@@ -3,9 +3,9 @@
 [![.NET](https://github.com/joerivanarkel/AzureEventHub/actions/workflows/dotnet.yml/badge.svg)](https://github.com/joerivanarkel/AzureEventHub/actions/workflows/dotnet.yml)
 
 # Azure Event Hub
-In this example I am Sending and Recieving messages with Azure Event Hub. For this I used the: `Azure.Messaging.EventHubs`, `Azure.Messaging.EventHubs.Processor`, `Azure.Storage.Blobs` NuGet packages. I used Blob sotrage with the `EventProccesoorClient`, which will come up later on. I also used dotnet secrets with my `joerivanarkel.UserSecrets` package.
+In this example I am Sending and Receiving messages with Azure Event Hub. For this I used the: `Azure.Messaging.EventHubs`, `Azure.Messaging.EventHubs.Processor`, `Azure.Storage.Blobs` NuGet packages. I used Blob storage with the `EventProccesoorClient`, which will come up later on. I also used dotnet secrets with my `joerivanarkel.UserSecrets` package.
 
-Before writing any code i have created am Azure Event Hub nmaespace and a Storage Account in the Azure Portal. Furthermore i created an Event Hub in the Namespace. In this example is how to work with the Event Hub.
+Before writing any code i have created am Azure Event Hub namespace and a Storage Account in the Azure Portal. Furthermore i created an Event Hub in the Namespace. In this example is how to work with the Event Hub.
 
 ## Sending Data to an Event Hub
 I firstly create a Batch of events I will be sending to the Event Hub, with the `EventDataBatch` object. I used the `EventHubProducerClient` i created earlier. Then i add 5 events to this batch. I send these to the Event Hub with the `SendAsync()` method. Finally i close the connection.
@@ -45,7 +45,7 @@ Task processErrorHandler(ProcessErrorEventArgs eventArgs) => Task.CompletedTask;
 return true;
 ```
 
-In these handlers I take the arguments given and display the recieved or return he exception.
+In these handlers I take the arguments given and display the received or return the exception.
 
 ```csharp
 protected static async Task ProcessEventHandler(ProcessEventArgs eventArgs)
